@@ -71,7 +71,7 @@ OBS_TEXT : [\u0080-\u00FF];
 
 qdtext      :       HTAB | SP | EXCLAM | SQUOTE | HASH | CARET
             | UNDERS | BACKT | PIPE | TILDE | LOWER | OBS_TEXT;
-quoted_pair :            BSLASH (HTAB | SP | vchar | OBS_TEXT);
+quoted_pair :           BSLASH (whitespace | vchar | OBS_TEXT);
 tchar       :     alpha | AMP | BACKT | CARET | DIGIT | DOLLAR
             |     EXCLAM | HASH | MINUS | PERIOD | PIPE | PLUS
             |          PRCENT | SQUOTE | STAR | TILDE | UNDERS;
@@ -85,7 +85,6 @@ obs_fold      :                           whitespace* CRLF whitespace+;
 quoted_string :                  DQUOTE (qdtext | quoted_pair)* DQUOTE;
 field_value   :            quoted_string | (field_content | obs_fold)*;
 header_field  :   field_name COLON whitespace* field_value whitespace*;
-
 
 request_line : METHOD SP origin_form SP HTTP_version CRLF;
 http_request :     request_line (header_field CRLF)* CRLF; // message body omitted

@@ -19,9 +19,19 @@ public class HttpRequestParserTest {
         var tokenStream = new CommonTokenStream(lexer);
         return new HttpRequestParser(tokenStream);
     }
+
     @Test
     void testValidPostRequest() throws IOException {
         var fileUrl = getClass().getClassLoader().getResource("post_example.http");
+        var parser = getParser(fileUrl.getFile());
+        var request = parser.http_request();
+
+        assertEquals(0, parser.getNumberOfSyntaxErrors());
+    }
+
+    @Test
+    void testValidPostRequest2() throws IOException {
+        var fileUrl = getClass().getClassLoader().getResource("post_example2.http");
         var parser = getParser(fileUrl.getFile());
         var request = parser.http_request();
 
@@ -49,6 +59,42 @@ public class HttpRequestParserTest {
     @Test
     void testValidGetRequest3() throws IOException {
         var fileUrl = getClass().getClassLoader().getResource("get_example3.http");
+        var parser = getParser(fileUrl.getFile());
+        var request = parser.http_request();
+
+        assertEquals(0, parser.getNumberOfSyntaxErrors());
+    }
+
+    @Test
+    void testValidGetRequest4() throws IOException {
+        var fileUrl = getClass().getClassLoader().getResource("get_example4.http");
+        var parser = getParser(fileUrl.getFile());
+        var request = parser.http_request();
+
+        assertEquals(0, parser.getNumberOfSyntaxErrors());
+    }
+
+    @Test
+    void testValidDeleteRequest() throws IOException {
+        var fileUrl = getClass().getClassLoader().getResource("delete_example.http");
+        var parser = getParser(fileUrl.getFile());
+        var request = parser.http_request();
+
+        assertEquals(0, parser.getNumberOfSyntaxErrors());
+    }
+
+    @Test
+    void testValidPutRequest() throws IOException {
+        var fileUrl = getClass().getClassLoader().getResource("put_example.http");
+        var parser = getParser(fileUrl.getFile());
+        var request = parser.http_request();
+
+        assertEquals(0, parser.getNumberOfSyntaxErrors());
+    }
+
+    @Test
+    void testValidPutRequest2() throws IOException {
+        var fileUrl = getClass().getClassLoader().getResource("put_example2.http");
         var parser = getParser(fileUrl.getFile());
         var request = parser.http_request();
 
