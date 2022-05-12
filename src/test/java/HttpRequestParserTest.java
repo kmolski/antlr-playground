@@ -36,4 +36,22 @@ public class HttpRequestParserTest {
 
         assertEquals(0, parser.getNumberOfSyntaxErrors());
     }
+
+    @Test
+    void testValidGetRequest2() throws IOException {
+        var fileUrl = getClass().getClassLoader().getResource("get_example2.http");
+        var parser = getParser(fileUrl.getFile());
+        var request = parser.http_request();
+
+        assertEquals(0, parser.getNumberOfSyntaxErrors());
+    }
+
+    @Test
+    void testValidGetRequest3() throws IOException {
+        var fileUrl = getClass().getClassLoader().getResource("get_example3.http");
+        var parser = getParser(fileUrl.getFile());
+        var request = parser.http_request();
+
+        assertEquals(0, parser.getNumberOfSyntaxErrors());
+    }
 }
