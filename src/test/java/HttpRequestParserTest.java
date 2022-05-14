@@ -24,7 +24,7 @@ public class HttpRequestParserTest {
     void testValidPostRequest() throws IOException {
         var fileUrl = getClass().getClassLoader().getResource("post_example.http");
         var parser = getParser(fileUrl.getFile());
-        var request = parser.http_request();
+        var request = parser.httpRequest();
 
         assertEquals(0, parser.getNumberOfSyntaxErrors());
     }
@@ -33,7 +33,7 @@ public class HttpRequestParserTest {
     void testValidPostRequest2() throws IOException {
         var fileUrl = getClass().getClassLoader().getResource("post_example2.http");
         var parser = getParser(fileUrl.getFile());
-        var request = parser.http_request();
+        var request = parser.httpRequest();
 
         assertEquals(0, parser.getNumberOfSyntaxErrors());
     }
@@ -42,7 +42,7 @@ public class HttpRequestParserTest {
     void testValidGetRequest() throws IOException {
         var fileUrl = getClass().getClassLoader().getResource("get_example.http");
         var parser = getParser(fileUrl.getFile());
-        var request = parser.http_request();
+        var request = parser.httpRequest();
 
         assertEquals(0, parser.getNumberOfSyntaxErrors());
     }
@@ -51,7 +51,7 @@ public class HttpRequestParserTest {
     void testValidGetRequest2() throws IOException {
         var fileUrl = getClass().getClassLoader().getResource("get_example2.http");
         var parser = getParser(fileUrl.getFile());
-        var request = parser.http_request();
+        var request = parser.httpRequest();
 
         assertEquals(0, parser.getNumberOfSyntaxErrors());
     }
@@ -60,7 +60,7 @@ public class HttpRequestParserTest {
     void testValidGetRequest3() throws IOException {
         var fileUrl = getClass().getClassLoader().getResource("get_example3.http");
         var parser = getParser(fileUrl.getFile());
-        var request = parser.http_request();
+        var request = parser.httpRequest();
 
         assertEquals(0, parser.getNumberOfSyntaxErrors());
     }
@@ -69,7 +69,7 @@ public class HttpRequestParserTest {
     void testValidGetRequest4() throws IOException {
         var fileUrl = getClass().getClassLoader().getResource("get_example4.http");
         var parser = getParser(fileUrl.getFile());
-        var request = parser.http_request();
+        var request = parser.httpRequest();
 
         assertEquals(0, parser.getNumberOfSyntaxErrors());
     }
@@ -78,7 +78,7 @@ public class HttpRequestParserTest {
     void testValidDeleteRequest() throws IOException {
         var fileUrl = getClass().getClassLoader().getResource("delete_example.http");
         var parser = getParser(fileUrl.getFile());
-        var request = parser.http_request();
+        var request = parser.httpRequest();
 
         assertEquals(0, parser.getNumberOfSyntaxErrors());
     }
@@ -87,7 +87,7 @@ public class HttpRequestParserTest {
     void testValidPutRequest() throws IOException {
         var fileUrl = getClass().getClassLoader().getResource("put_example.http");
         var parser = getParser(fileUrl.getFile());
-        var request = parser.http_request();
+        var request = parser.httpRequest();
 
         assertEquals(0, parser.getNumberOfSyntaxErrors());
     }
@@ -96,7 +96,7 @@ public class HttpRequestParserTest {
     void testValidPutRequest2() throws IOException {
         var fileUrl = getClass().getClassLoader().getResource("put_example2.http");
         var parser = getParser(fileUrl.getFile());
-        var request = parser.http_request();
+        var request = parser.httpRequest();
 
         assertEquals(0, parser.getNumberOfSyntaxErrors());
     }
